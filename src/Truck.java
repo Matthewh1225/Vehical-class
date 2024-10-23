@@ -1,6 +1,6 @@
 public class Truck extends Vehicel{
     int maxGas=100;
-    int curGas=0;
+
     int driveTime;
     int totalDriveTime;
     boolean isMovingForward;
@@ -12,10 +12,11 @@ public class Truck extends Vehicel{
 
     public void driveForward(){
         while(isMovingForward){
-            if (curGas != 0)
+            if (curGasAmount != 0){
             driveTime++;
             totalDriveTime+=driveTime;
-            curGas-=1;
+            curGasAmount--;
+            }
         }
         {
             System.out.println("Out of gas!!!");
@@ -23,10 +24,10 @@ public class Truck extends Vehicel{
 
     }
     public int CheckAmount(){
-        return curGas;
+        return curGasAmount;
     }
     public void refuleMax(){
-        curGas=maxGas;
+        curGasAmount=maxGas;
         driveTime=0;
 
     }    

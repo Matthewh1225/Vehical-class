@@ -13,6 +13,13 @@ public abstract class Vehicel {
             curGasAmount=gasCapacity;
             
         }
+        void reful(int AmountToRefule){
+            curGasAmount+=AmountToRefule;
+            if (curGasAmount>gasCapacity){
+                curGasAmount=gasCapacity;
+            }
+
+        }
         String getName(String name){
             return this.name;
         }
